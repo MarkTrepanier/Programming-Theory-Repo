@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,5 +19,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("here i am");
     }
 
-    
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
