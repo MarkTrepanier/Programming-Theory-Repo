@@ -8,12 +8,11 @@ public class Enemy : Actor
     private Projectile pill;
     private GameObject player;
     [SerializeField]
-    private float fireRate = 3f;
     private float countDown;
 
     private void Start()
     {
-        countDown = fireRate;
+        countDown = launchRate;
         player = GameObject.Find("Player");
     }
     void Update()
@@ -30,7 +29,7 @@ public class Enemy : Actor
             Instantiate(pill,
                 transform.position + transform.forward * 2, 
                 transform.localRotation);
-            countDown = fireRate;
+            countDown = launchRate;
         }
     }
 

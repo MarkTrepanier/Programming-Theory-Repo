@@ -16,6 +16,7 @@ public abstract class Projectile : MonoBehaviour
     private float m_effectTime =3f;
     public float effectTime { get { return m_effectTime; } set { m_effectTime = value; } }
 
+
     public virtual void Move()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);    
@@ -27,4 +28,10 @@ public abstract class Projectile : MonoBehaviour
     }
 
     public abstract IEnumerator CauseEffect(Actor actor);
+
+    protected virtual void Expire()
+    {
+        if (Mathf.Abs(transform.position.z) > 6)
+            Destroy(gameObject);
+    }
 }

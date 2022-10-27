@@ -20,6 +20,7 @@ public class UpperPill : Projectile
     // Update is called once per frame
     void Update()
     {
+        Expire();
         Move();
     }
 
