@@ -6,13 +6,13 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager Instance { get; private set; }
+    public static GameManager Instance { get; private set; }
     private Actor player;
     private Actor enemy;
     private TextMeshProUGUI playerHealth;
     private TextMeshProUGUI enemyHealth;
-    private bool m_isGameActive = false;
-    public bool isGameActive { get; private set;}
+    private  bool m_isGameActive = false;
+    public bool isGameActive { get { return m_isGameActive; } private set { m_isGameActive = value; } }
 
     private void Awake()
     {

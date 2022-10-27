@@ -8,10 +8,14 @@ public class PlayerController : Actor
     private Projectile downerPill;
     void Update()
     {
-        Move();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (GameManager.Instance.isGameActive)
         {
-            Launch();
+
+            Move();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Launch();
+            }
         }
     }
 
