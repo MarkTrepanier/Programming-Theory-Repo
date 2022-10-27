@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private Actor enemy;
     private TextMeshProUGUI playerHealth;
     private TextMeshProUGUI enemyHealth;
+    private TextMeshProUGUI SuccessBanner;
     private  bool m_isGameActive = false;
 
     private TextMeshProUGUI loseText;
@@ -62,6 +63,9 @@ public class GameManager : MonoBehaviour
         restartButton = GameObject.Find("Canvas").transform.Find("Restart Button").GetComponent<Button>();
         restartButton.gameObject.SetActive(true);
         restartButton.onClick.AddListener(StartGame);
+        string winner = player.health > 0 ? "WinText" : "LoseText";
+        SuccessBanner = GameObject.Find("Canvas").transform.Find(winner).GetComponent<TextMeshProUGUI>();
+        SuccessBanner.gameObject.SetActive(true);
     }
 
 
