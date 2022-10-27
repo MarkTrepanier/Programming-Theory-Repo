@@ -8,10 +8,14 @@ public class PlayerController : Actor
     private Projectile downerPill;
     void Update()
     {
-        Move();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (GameManager.Instance.isGameActive)
         {
-            Launch();
+
+            Move();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Launch();
+            }
         }
     }
 
@@ -24,5 +28,8 @@ public class PlayerController : Actor
     {
         float horizontal = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontal * Time.deltaTime * speed);
+        Vector3 clampedPos = transform.position;
+        clampedPos.x = Mathf.Clamp(clampedPos.x, -4, 4);
+        transform.position = clampedPos;
     }
 }

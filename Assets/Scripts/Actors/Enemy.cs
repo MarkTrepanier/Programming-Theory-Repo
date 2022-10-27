@@ -17,8 +17,11 @@ public class Enemy : Actor
     }
     void Update()
     {
-        Move();
-        Launch();
+        if (GameManager.Instance.isGameActive)
+        {
+            Move();
+            Launch();
+        }
     }
 
     public override void Launch()
