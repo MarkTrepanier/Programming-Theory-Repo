@@ -28,7 +28,6 @@ public class DownerPill : Projectile
     {
         actor.speed /= 2;
         yield return new WaitForSeconds(effectTime);
-        Debug.Log("yus");
         actor.speed *= 2;
     }
 }
