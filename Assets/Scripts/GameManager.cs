@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("starting");
         SceneManager.LoadScene(1);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -67,8 +66,4 @@ public class GameManager : MonoBehaviour
         SuccessBanner = GameObject.Find("Canvas").transform.Find(winner).GetComponent<TextMeshProUGUI>();
         SuccessBanner.gameObject.SetActive(true);
     }
-
-
-    //set up you win and you lose text objects
-    //enemy at 0 win || player at 0 lose
 }
