@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class PlayerController : Actor
 {
+    [SerializeField]
+    private Projectile downerPill;
     void Update()
     {
         Move();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Launch();
+        }
     }
 
     public override void Launch()
     {
-        throw new System.NotImplementedException();
+        Instantiate(downerPill, transform.position + Vector3.forward * 2, transform.rotation);
     }
 
     public override void Move()
