@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private Actor enemy;
     private TextMeshProUGUI playerHealth;
     private TextMeshProUGUI enemyHealth;
+    private bool m_isGameActive = false;
+    public bool isGameActive { get; private set;}
 
     private void Awake()
     {
@@ -44,9 +46,9 @@ public class GameManager : MonoBehaviour
         enemy = GameObject.Find("Enemy").GetComponent<Actor>();
         playerHealth = GameObject.Find("Player Health").GetComponent<TextMeshProUGUI>();
         enemyHealth = GameObject.Find("Enemy Health").GetComponent<TextMeshProUGUI>();
+        isGameActive = true;
     }
 
     //set up you win and you lose text objects
-    //health text objects
     //enemy at 0 win || player at 0 lose
 }
