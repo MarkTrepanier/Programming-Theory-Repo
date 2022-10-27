@@ -25,6 +25,8 @@ public abstract class Projectile : MonoBehaviour
     public virtual void DealDamage(Actor actor)
     {
         actor.health -= m_damage;
+        if (actor.health <= 0)
+            GameManager.Instance.GameOver();
     }
 
     public abstract IEnumerator CauseEffect(Actor actor);

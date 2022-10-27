@@ -11,7 +11,7 @@ public class DownerPill : Projectile
         Actor actor = collision.gameObject.GetComponent<Actor>();
         if (actor != null)
         {
-            actor.health -= damage;
+            DealDamage(actor);
             actor.TakeEffect(CauseEffect(actor));
             Destroy(gameObject);
         }
