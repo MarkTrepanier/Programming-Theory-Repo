@@ -13,9 +13,14 @@ public abstract class Actor : MonoBehaviour
     public float health { get { return m_health; } set { m_health = value; } }
 
     [SerializeField]
-    private float m_launchSpeed;
-    public float launchSpeed { get { return m_launchSpeed; } set { m_launchSpeed = value; } }
+    private float m_launchRate;
+    public float launchRate { get { return m_launchRate; } set { m_launchRate = value; } }
 
     public abstract void Launch();
     public abstract void Move();
+
+    public void TakeEffect(IEnumerator enumerator)
+    {
+        StartCoroutine(enumerator);
+    }
 }

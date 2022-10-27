@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        Debug.Log("here i am");
     }
 
     public void StartGame()
